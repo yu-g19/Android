@@ -108,9 +108,6 @@ class ItemActivity : AppCompatActivity() {
                 list[p1].isCompleted = !list[p1].isCompleted
                 activity.dbHandler.updateToDoItem(list[p1])
             }
-            holder.edit.setOnClickListener{
-                activity.updateItem(list[p1])
-            }
             holder.delete.setOnClickListener{
                 val dialog = AlertDialog.Builder(activity)
                 dialog.setTitle("Are you sure")
@@ -123,6 +120,9 @@ class ItemActivity : AppCompatActivity() {
 
                 }
                 dialog.show()
+            }
+            holder.edit.setOnClickListener{
+                activity.updateItem(list[p1])
             }
         }
 
